@@ -1,0 +1,45 @@
+# Blender settings
+Config.data_dir = "data/nerf_synthetic"
+Config.checkpoint_dir = "out/flipnerf_blender8_ship"
+Config.dataset_loader = 'blender'
+Config.blender_scene = 'ship'
+Config.white_background = True
+Config.factor = 2
+Config.render_factor = 2
+MLP.density_noise = 1.
+
+Config.n_input_views = 8
+Config.max_steps = 156250
+
+Config.lr_init = 0.001
+Config.lr_final = 0.00001
+Config.lr_delay_steps = 1024
+Config.lr_delay_mult = 0.01
+Config.grad_max_norm = 0.1
+Config.grad_max_val = 0.1
+
+Config.anneal_nearfar = True
+Config.anneal_nearfar_steps = 256
+Config.anneal_nearfar_perc = 0.5
+
+############## flipnerf ##############
+Config.nll_loss = True
+Config.nll_loss_maxstep = 512
+Config.nll_loss_weight_start = 4.0
+Config.nll_loss_weight_end = 1e-3
+Config.flip_nll_loss_maxstep = 512
+Config.flip_nll_loss_weight_start = 0.04
+Config.flip_nll_loss_weight_end = 1e-5
+Config.ue_loss = True
+Config.ue_loss_maxstep = 512
+Config.ue_loss_weight_start = 1e-5
+Config.ue_loss_weight_end = 1e-2
+Config.flip_ue_loss_weight = 1e-3
+Config.bfc_loss = True
+Config.bfc_loss_weight = 0.01
+Config.ori_loss = True
+Config.ori_loss_weight = 0.01
+############## flipnerf ##############
+
+Config.train_render_every = 5000
+Config.load_random_rays = False
