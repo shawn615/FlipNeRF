@@ -80,13 +80,22 @@ After downloading the checkpoints, you need to change the `Config.checkpoint_dir
 
 ## Citation
 
-If you find our work useful, please cite it as
+If you find our work useful, please consider citing
 ```
 @article{seo2023flipnerf,
   title={FlipNeRF: Flipped Reflection Rays for Few-shot Novel View Synthesis},
   author={Seo, Seunghyeon and Chang, Yeonjin and Kwak, Nojun},
   journal={arXiv preprint arXiv:2306.17723},
   year={2023}
+}
+
+@InProceedings{Seo_2023_CVPR,
+    author    = {Seo, Seunghyeon and Han, Donghoon and Chang, Yeonjin and Kwak, Nojun},
+    title     = {MixNeRF: Modeling a Ray With Mixture Density for Novel View Synthesis From Sparse Inputs},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {20659-20668}
 }
 ```
 *The template is borrowed from the [RegNeRF repository](https://github.com/google-research/google-research/tree/master/regnerf).
