@@ -265,6 +265,7 @@ def visualize_suite(rendering, rays, config):
   distance_mean = rendering['distance_mean']
   distance_median = rendering['distance_median']
   distance_std = rendering['distance_std']
+  rgb_std = rendering['rgb_std']
   distance_p5 = rendering['distance_percentile_5']  # pylint: disable=unused-variable
   distance_p95 = rendering['distance_percentile_95']  # pylint: disable=unused-variable
 
@@ -284,6 +285,8 @@ def visualize_suite(rendering, rays, config):
 
   vis_std = visualize_cmap(distance_std, acc, cm.get_cmap('plasma'), matte_background=False, white_background=config.white_background)
 
+  rgb_std = visualize_cmap(rgb_std, acc, cm.get_cmap('plasma'), matte_background=False, white_background=config.white_background)
+
   vis = {
       'color': rgb,
       'acc': acc,
@@ -294,6 +297,7 @@ def visualize_suite(rendering, rays, config):
       'depth_mean_mod': vis_mean_mod,
       'depth_median_mod': vis_median_mod,
       'depth_std': vis_std,
+      'rgb_std': rgb_std,
   }
 
   return vis
