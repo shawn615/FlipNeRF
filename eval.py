@@ -232,7 +232,7 @@ def main(unused_argv):
                              path_fn(f'distance_median_{idx:03d}.tiff'))
           utils.save_img_f32(rendering['acc'], path_fn(f'acc_{idx:03d}.tiff'))
           for k, v in vis.visualize_suite(rendering, batch['rays'], config).items():
-            if k == 'depth_mean' or k == 'depth_median' or k == 'depth_std':
+            if k == 'depth_mean' or k == 'depth_median' or k == 'depth_std' or k == 'rgb_std':
               utils.save_img_u8(v, path_fn(f'{k}_{idx:03d}.png'))
 
     if (not config.eval_only_once) and (jax.host_id() == 0):
