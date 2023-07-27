@@ -278,6 +278,7 @@ def volumetric_rendering(rgbs,
     rendering['normals'] = normals_map
 
     expectation = lambda x: (weights * x).sum(axis=-1) / acc
+    expectation_expand = lambda x: (weights[Ellipsis, None] * x).sum(axis=-2) / acc[Ellipsis, None]
     expectation_save = lambda x: (weights * x).sum(-1) / jnp.clip(acc, eps)
 
     rendering['distance_mean'] = (
@@ -291,6 +292,11 @@ def volumetric_rendering(rgbs,
             0.,
             jnp.sqrt(expectation(t_mids**2) - rendering['distance_mean']**2)),
         0.)
+    rendering['rgb_std'] = jnp.nan_to_num(
+        jnp.maximum(
+            0.,
+            jnp.sqrt(expectation_expand(rgbs**2) - expectation_expand(rgbs)**2)),
+        0.).mean(axis=-1)
 
     # Compute several percentiles of distance, including the median.
     # We assume t_mids are sorted.
