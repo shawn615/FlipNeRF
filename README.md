@@ -82,11 +82,13 @@ After downloading the checkpoints, you need to change the `Config.checkpoint_dir
 
 If you find our work useful, please consider citing
 ```
-@article{seo2023flipnerf,
-  title={FlipNeRF: Flipped Reflection Rays for Few-shot Novel View Synthesis},
-  author={Seo, Seunghyeon and Chang, Yeonjin and Kwak, Nojun},
-  journal={arXiv preprint arXiv:2306.17723},
-  year={2023}
+@InProceedings{Seo_2023_ICCV,
+    author    = {Seo, Seunghyeon and Chang, Yeonjin and Kwak, Nojun},
+    title     = {FlipNeRF: Flipped Reflection Rays for Few-shot Novel View Synthesis},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2023},
+    pages     = {22883-22893}
 }
 
 @InProceedings{Seo_2023_CVPR,
